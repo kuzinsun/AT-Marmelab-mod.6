@@ -74,6 +74,7 @@ public class InvoicesPage {
     }
 
     public InvoicesPage changeAddressCheck() {
+        changeAddressCheck.shouldHave(text("Groove street"));
         assertTrue(changeAddressCheck.isDisplayed());
         return this;
     }

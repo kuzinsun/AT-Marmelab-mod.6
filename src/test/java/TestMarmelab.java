@@ -1,6 +1,8 @@
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.junit.TextReport;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -16,6 +18,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 @RunWith(Parameterized.class)
 public class TestMarmelab {
+    @Rule
+    public TextReport textReport = new TextReport();
+
     @Parameterized.Parameter
     public String browserName;
 
