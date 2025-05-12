@@ -1,7 +1,7 @@
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -16,22 +16,25 @@ public class CustomerCartPage {
     }*/
 
     public String getOldAddress() {
+        address.shouldBe(visible);
         return address.getText();
     }
 
     public CustomerCartPage enterAddress() {
+        address.shouldBe(visible);
         address.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         address.sendKeys("Groove street");
-        address.shouldHave(text("Groove street"));
         return this;
     }
 
     public CustomerCartPage clickSaveButton() {
+        saveButton.shouldBe(enabled);
         saveButton.click();
         return this;
     }
 
     public CustomerCartPage revertAddress(String oldAddress) {
+        backupAddress.shouldBe(enabled);
         backupAddress.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         backupAddress.sendKeys(oldAddress);
         return this;

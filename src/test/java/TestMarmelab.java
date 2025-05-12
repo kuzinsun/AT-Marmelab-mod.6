@@ -80,7 +80,7 @@ public class TestMarmelab {
         customerCartPage = new CustomerCartPage();
     }
 
-    /*public static void pause(int seconds) {
+    /*public static void pause(int seconds) { //only for debug
         try {
             Thread.sleep(seconds * 1000);
         } catch (InterruptedException e) {
@@ -131,6 +131,8 @@ public class TestMarmelab {
         invoicesPage.clickChooseFilterType();
 
         invoicesPage.sendCustomer(getCustomer);
+
+        invoicesPage.chooseCustomerInFilterList(getCustomer);
 
         invoicesPage.clickExpandButton();
 

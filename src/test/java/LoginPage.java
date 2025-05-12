@@ -1,5 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -12,6 +13,7 @@ public class LoginPage {
     private final SelenideElement passwordField = $(byXpath("//input[@id=':r2:']"));
 
     public LoginPage login() {
+        usernameField.shouldBe(enabled);
         usernameField.setValue(username);
         passwordField.setValue(password);
         passwordField.pressEnter();
